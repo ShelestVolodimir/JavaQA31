@@ -1,4 +1,4 @@
-package org.example.Dz;
+package org.example.Leson3;
 
 import java.util.Scanner;
 

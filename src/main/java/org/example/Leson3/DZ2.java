@@ -1,4 +1,4 @@
-package org.example.Dz;
+package org.example.Leson3;
 
 import java.util.Scanner;
 
@@ -7,7 +7,7 @@ public class DZ2 {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
-            System.out.println("Напишіть якесь число = ");
+            System.out.println("Напишіть день тижня");
             int num = scanner.nextInt();
             String weekDay = switch (num) {
                 case 1 -> "Понеділок";
