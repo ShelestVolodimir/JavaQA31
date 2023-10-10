@@ -1,4 +1,4 @@
-package org.example.Dz;
+package org.example.Dz.Dz;
 
 public class Dz {
     public static void main (String[] args){
