@@ -11,9 +11,8 @@ public class Hw1 {
         private String country;
         private String homeAddress;
 
-        // Конструктор класу
         public void Person1() {
-            // За замовчуванням поля порожні
+
             fullName = "";
             birthDate = "";
             contactPhone = "";
@@ -22,7 +21,6 @@ public class Hw1 {
             homeAddress = "";
         }
 
-        // Метод для введення даних
         public void enterData() {
             Scanner scanner = new Scanner(System.in);
 
@@ -40,7 +38,6 @@ public class Hw1 {
             homeAddress = scanner.nextLine();
         }
 
-        // Метод для виведення даних
         public void displayData() {
             System.out.println("ПІБ: " + fullName);
             System.out.println("Дата народження: " + birthDate);
@@ -50,7 +47,6 @@ public class Hw1 {
             System.out.println("Домашня адреса: " + homeAddress);
         }
 
-        // Методи для доступу до окремих полів
         public String getFullName() {
             return fullName;
         }
