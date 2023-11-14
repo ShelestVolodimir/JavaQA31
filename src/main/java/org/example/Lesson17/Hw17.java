@@ -1,7 +1,7 @@
 package org.example.Lesson17;
 
-public class Hw17 {
-    private boolean light;
+public class Hw17{
+  /*  private boolean light;
 
     public void Flashlight() {
         // Ліхтарик вимкнений при створенні
@@ -44,4 +44,5 @@ public class Hw17 {
         System.out.println("Ліхтарик увімкнено? " + flashlight.isLight());
     }
 }
+}*/
 }
