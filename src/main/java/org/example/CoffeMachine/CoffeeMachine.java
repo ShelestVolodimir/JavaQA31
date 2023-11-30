@@ -1,5 +1,7 @@
 package org.example.CoffeMachine;
 
+import java.time.Duration;
+
 public abstract class CoffeeMachine implements ICoffeeMachine {
     private int maxWaterLevel;
     private int maxCoffeeLevel;
@@ -31,11 +33,20 @@ public abstract class CoffeeMachine implements ICoffeeMachine {
 
     @Override
     public void makeEspresso() {
-
+        System.out.println("Ваше Еспрессо буде готове через 20 секунд");
+        try {
+            Thread.sleep(Duration.ofSeconds(20));
+        } catch (InterruptedException e){}
+        System.out.println("Ваша кава готова");
     }
 
     @Override
     public void makeAmericano() {
+        System.out.println("Ваше Американо буде готове через 30 секунд ");
+        try {
+            Thread.sleep(Duration.ofSeconds(30));
+        } catch (InterruptedException e){}
+        System.out.println("Ваша кава готова");
 
     }
 
