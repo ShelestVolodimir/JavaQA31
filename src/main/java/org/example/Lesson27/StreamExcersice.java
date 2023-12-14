@@ -160,7 +160,7 @@ public class StreamExcersice {
 
     static Student ex06() {
         // TODO: Задание 6
-        // Найти студента с минимальным возрастом
+        // Найти студента с минимальным возрасто
         return students.stream()
                 .min(Comparator.comparingInt(Student::getAge))
                 .orElse(new Student("John", 18, Sex.MAN));
