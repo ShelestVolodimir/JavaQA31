@@ -4,6 +4,7 @@ import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 public class CountdownToNewYear {
+
     public static void main(String[] args) {
         long totalSeconds = getSecondsUntilNewYear();
         Duration duration = Duration.ofSeconds(totalSeconds);
