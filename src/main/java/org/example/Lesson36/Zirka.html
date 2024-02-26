@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Rating</title>
+    <style>
+        .star-rating {
+            font-size: 24px;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .star-rating span {
+            color: black;
+        }
+
+        .star-rating span:hover,
+        .star-rating span:hover ~ span {
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+
+<div class="star-rating" onclick="rate(event)">
+    <span>&#9733;</span>
+    <span>&#9733;</span>
+    <span>&#9733;</span>
+    <span>&#9733;</span>
+    <span>&#9733;</span>
+</div>
+
+<script>
+    function rate(event) {
+
+        var stars = document.querySelectorAll('.star-rating span');
+
+
+        var clickedIndex = Array.from(stars).indexOf(event.target);
+
+
+        for (var i = 0; i <= clickedIndex; i++) {
+            stars[i].style.color = 'orange';
+        }
+
+
+        for (var j = clickedIndex + 1; j < stars.length; j++) {
+            stars[j].style.color = 'black';
+        }
+    }
+</script>
+
+</body>
+</html>

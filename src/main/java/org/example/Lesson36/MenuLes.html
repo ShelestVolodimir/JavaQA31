@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бічне меню</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        #sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        #sidebar a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        #sidebar a:hover {
+            color: #f1f1f1;
+        }
+
+        #main-content {
+            transition: margin-left .5s;
+            padding: 16px;
+        }
+
+        #menu-btn {
+            font-size: 30px;
+            cursor: pointer;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1;
+            color: #111;
+        }
+    </style>
+</head>
+<body>
+
+<div id="sidebar">
+    <a href="#" onclick="closeMenu()">Закрити меню</a>
+    <a href="#">Пункт меню 1</a>
+    <a href="#">Пункт меню 2</a>
+    <a href="#">Пункт меню 3</a>
+</div>
+
+<div id="main-content">
+    <span id="menu-btn" onclick="openMenu()">&#9776; MENU</span>
+    <h1>Основний вміст сторінки</h1>
+    <p>             ^_^</p>
+</div>
+
+<script>
+    function openMenu() {
+        document.getElementById("sidebar").style.width = "250px";
+        document.getElementById("main-content").style.marginLeft = "250px";
+        document.getElementById("menu-btn").style.visibility = "hidden";
+    }
+
+    function closeMenu() {
+        document.getElementById("sidebar").style.width = "0";
+        document.getElementById("main-content").style.marginLeft= "0";
+        document.getElementById("menu-btn").style.visibility = "visible";
+    }
+</script>
+
+</body>
+</html>
