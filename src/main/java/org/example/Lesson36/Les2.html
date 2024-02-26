@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Додавання та видалення блоків</title>
+    <style>
+        .color-block {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            display: inline-block;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<button onclick="addColorBlock()">Додати блок</button>
+<div id="blocksContainer"></div>
+
+<script>
+    var blocksContainer = document.getElementById("blocksContainer");
+
+    function addColorBlock() {
+        var colorBlock = document.createElement("div");
+        colorBlock.className = "color-block";
+        colorBlock.style.backgroundColor = getRandomColor();
+
+        colorBlock.addEventListener("click", function() {
+            removeColorBlock(colorBlock);
+        });
+
+        blocksContainer.appendChild(colorBlock);
+    }
+
+    function removeColorBlock(block) {
+        blocksContainer.removeChild(block);
+    }
+
+    function getRandomColor() {
+        var letters = "0123456789ABCDEF";
+        var color = "#";
+        for (var i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кнопки для зміни числа</title>
+    <style>
+        input[type="text"] {
+            pointer-events: none; /* Забороняє введення тексту через клавіатуру */
+        }
+    </style>
+</head>
+<body>
+
+<h2>Число:</h2>
+<input type="text" id="numberInput" value="0" readonly>
+
+<button onclick="incrementNumber()">Більше</button>
+<button onclick="decrementNumber()">Менше</button>
+
+<script>
+    var numberInput = document.getElementById("numberInput");
+
+    function incrementNumber() {
+        var currentNumber = parseInt(numberInput.value);
+        numberInput.value = currentNumber + 1;
+    }
+
+    function decrementNumber() {
+        var currentNumber = parseInt(numberInput.value);
+        numberInput.value = currentNumber - 1;
+    }
+</script>
+
+</body>
+</html>
