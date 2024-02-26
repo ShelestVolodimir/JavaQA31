@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Погода у вашому регіоні</title>
+</head>
+<body>
+
+<h1>Поточна погода у вашому регіоні</h1>
+<p id="temperature">Температура: </p>
+<p id="pressure">Тиск: </p>
+<p id="humidity">Вологість повітря: </p>
+
+<script>
+    // Функція для отримання погодової інформації
+    function getWeather() {
+        // Координати вашого регіону (замість цього введіть власні координати)
+        var latitude = 50.45;
+        var longitude = 30.523333;
+
+        // API ключ для OpenWeatherMap (замість цього використовуйте свій ключ)
+        var apiKey = '7b5cbb6bb21d0fc862c3b47a3b967ddf';
+
+        // Формуємо URL для запиту до OpenWeatherMap API
+        var apiUrl = `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&APPID=${apiKey}`;
+
+        // Виконуємо запит
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                // Отримані дані про погоду
+                var temperature = data.main.temp;
+                var pressure = data.main.pressure;
+                var humidity = data.main.humidity;
+
+                // Виводимо дані на сторінку
+                document.getElementById('temperature').innerText += `${temperature} °C`;
+                document.getElementById('pressure').innerText += `${pressure} hPa`;
+                document.getElementById('humidity').innerText += `${humidity} %`;
+            })
+            .catch(error => console.error('Помилка отримання погодової інформації:', error));
+    }
+
+    // Викликаємо функцію отримання погодової інформації при завантаженні сторінки
+    getWeather();
+</script>
+
+</body>
+</html>
