@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    function isPerfectNumber(number) {
+        var sum = 0;
+        for (var i = 1; i < number; i++) {
+            if (number % i === 0) {
+                sum += i;
+            }
+        }
+        return sum === number;
+    }
+
+    function findPerfectNumbers(min, max) {
+        if (min > max) {
+            console.log("Неправильно вказаний діапазон");
+            return;
+        }
+
+        console.log("Досконалі числа від", min, "до", max, ":");
+
+        for (var i = min; i <= max; i++) {
+            if (isPerfectNumber(i)) {
+                console.log(i);
+            }
+        }
+    }
+
+
+    findPerfectNumbers(1, 1000);
+<script>
+</body>
+</html>

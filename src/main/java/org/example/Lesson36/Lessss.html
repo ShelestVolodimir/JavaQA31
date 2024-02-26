@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function obliczPolePowierzchni(dlugosc, szerokosc) {
+        if (typeof szerokosc === 'undefined') {
+            // Якщо передано лише один параметр, вважаємо, що це сторона квадрата
+            return Math.pow(dlugosc, 2); // Піднесення до квадрату
+        } else {
+            // Якщо передані обидва параметри, обчислюємо площу прямокутника
+            return dlugosc * szerokosc;
+        }
+    }
+
+    // Приклад використання
+    var dlugoscPrяmokutnika = 5;
+    var szerokoscPrяmokutnika = 3;
+
+    var polePrяmokutnika = obliczPolePowierzchni(dlugoscPrяmokutnika, szerokoscPrяmokutnika);
+    console.log("Площа прямокутника:", polePrяmokutnika);
+
+    var bіlshorazMenшaDovжina = 4;
+    var poleKvadrata = obliczPolePowierzchni(bіlshorazMenшaDovжina);
+    console.log("Площа квадрата:", poleKvadrata);
+
+</script>
+</body>
+</html>
